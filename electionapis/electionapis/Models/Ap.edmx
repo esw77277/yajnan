@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AP_CONSTITUENCIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STATE_NAME" Type="nvarchar(max)" />
+          <Property Name="DISTRICT_NAME" Type="nvarchar(max)" />
+          <Property Name="CONSTITUENCY_NUMBER" Type="int" />
+          <Property Name="CONSTITUENCY_NAME" Type="nvarchar(max)" />
+          <Property Name="TDP" Type="nvarchar(max)" />
+          <Property Name="YSRCP" Type="nvarchar(max)" />
+          <Property Name="BJP" Type="nvarchar(max)" />
+          <Property Name="OTHERS" Type="nvarchar(max)" />
+          <Property Name="WINNER_VOTE" Type="int" />
+          <Property Name="MARGIN_VOTE" Type="int" />
+          <Property Name="SELECTED_CANDIDATE" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="AP_CONSTITUENCIES" EntityType="Self.AP_CONSTITUENCIES" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AP_CONSTITUENCIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STATE_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DISTRICT_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CONSTITUENCY_NUMBER" Type="Int32" />
+          <Property Name="CONSTITUENCY_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TDP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="YSRCP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BJP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OTHERS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WINNER_VOTE" Type="Int32" />
+          <Property Name="MARGIN_VOTE" Type="Int32" />
+          <Property Name="SELECTED_CANDIDATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EMONK_APEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AP_CONSTITUENCIES" EntityType="Self.AP_CONSTITUENCIES" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EMONK_APEntities">
+          <EntitySetMapping Name="AP_CONSTITUENCIES">
+            <EntityTypeMapping TypeName="Model.AP_CONSTITUENCIES">
+              <MappingFragment StoreEntitySet="AP_CONSTITUENCIES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="STATE_NAME" ColumnName="STATE_NAME" />
+                <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
+                <ScalarProperty Name="CONSTITUENCY_NUMBER" ColumnName="CONSTITUENCY_NUMBER" />
+                <ScalarProperty Name="CONSTITUENCY_NAME" ColumnName="CONSTITUENCY_NAME" />
+                <ScalarProperty Name="TDP" ColumnName="TDP" />
+                <ScalarProperty Name="YSRCP" ColumnName="YSRCP" />
+                <ScalarProperty Name="BJP" ColumnName="BJP" />
+                <ScalarProperty Name="OTHERS" ColumnName="OTHERS" />
+                <ScalarProperty Name="WINNER_VOTE" ColumnName="WINNER_VOTE" />
+                <ScalarProperty Name="MARGIN_VOTE" ColumnName="MARGIN_VOTE" />
+                <ScalarProperty Name="SELECTED_CANDIDATE" ColumnName="SELECTED_CANDIDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

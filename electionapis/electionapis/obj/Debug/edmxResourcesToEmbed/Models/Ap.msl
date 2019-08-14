@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EMONK_APEntities">
+    <EntitySetMapping Name="AP_CONSTITUENCIES">
+      <EntityTypeMapping TypeName="Model.AP_CONSTITUENCIES">
+        <MappingFragment StoreEntitySet="AP_CONSTITUENCIES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="STATE_NAME" ColumnName="STATE_NAME" />
+          <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
+          <ScalarProperty Name="CONSTITUENCY_NUMBER" ColumnName="CONSTITUENCY_NUMBER" />
+          <ScalarProperty Name="CONSTITUENCY_NAME" ColumnName="CONSTITUENCY_NAME" />
+          <ScalarProperty Name="TDP" ColumnName="TDP" />
+          <ScalarProperty Name="YSRCP" ColumnName="YSRCP" />
+          <ScalarProperty Name="BJP" ColumnName="BJP" />
+          <ScalarProperty Name="OTHERS" ColumnName="OTHERS" />
+          <ScalarProperty Name="WINNER_VOTE" ColumnName="WINNER_VOTE" />
+          <ScalarProperty Name="MARGIN_VOTE" ColumnName="MARGIN_VOTE" />
+          <ScalarProperty Name="SELECTED_CANDIDATE" ColumnName="SELECTED_CANDIDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

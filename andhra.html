@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+    .tdp {
+        background-color: yellow;
+        color:!important white;
+        
+    }
+
+    .ysr {
+        background-color: skyblue;
+        color: !important white;
+    }
+
+    .bjp {
+        background-color: #ED6B0C;
+        color: !important white;
+    }
+
+    .others {
+        background-color: plum;
+        color: !important white;
+    }
+
+    .state {
+        fill: none;
+        stroke: #a9a9a9;
+        stroke-width: 1;
+        cursor: pointer;
+    }
+
+        .state:hover {
+            fill-opacity: 0.5;
+        }
+
+    #tooltip {
+        position: absolute;
+        text-align: center;
+        padding: 20px;
+        margin: 10px;
+        font: 12px sans-serif;
+        background: lightsteelblue;
+        border: 1px;
+        border-radius: 2px;
+        pointer-events: none;
+    }
+
+        #tooltip h4 {
+            margin: 0;
+            font-size: 14px;
+        }
+
+    #tooltip {
+        background: rgba(0,0,0,0.9);
+        border: 1px solid grey;
+        border-radius: 5px;
+        font-size: 12px;
+        width: auto;
+        padding: 4px;
+        color: white;
+        opacity: 0;
+    }
+
+        #tooltip table {
+            table-layout: fixed;
+        }
+
+        #tooltip tr td {
+            padding: 0;
+            margin: 0;
+        }
+
+            #tooltip tr td:nth-child(1) {
+                width: 50px;
+            }
+
+            #tooltip tr td:nth-child(2) {
+                text-align: center;
+            }
+</style>
+<body>
+    <h1 style="text-align:left">Andhra Pradesh</h1>
+    <div id="tooltip"></div><!-- div to hold tooltip. -->
+    <svg viewBox="0 0 1700 700" id="statesvg"></svg> <!-- svg to hold the map. -->
+    <script src="JS/andhrapradesh.js"></script> <!-- creates india State. -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script>
+        function tooltipHtml(n) {	/* function to create html content string in tooltip div. */
+            return "<h4>" + n + "</h4>";
+        }
+
+        var sampleData = {};	/* Sample random data. */
+        ["SRK", "VZN", "VZA", "EG", "WG", "KRN", "GNT", "PRK", "NLR", "CDP", "CHR", "ANT", "KRN"].forEach(function (d) {
+            var low = Math.round(100 * Math.random()),
+                mid = Math.round(100 * Math.random()),
+                high = Math.round(100 * Math.random());
+            sampleData[d] = {
+                low: d3.min([low, mid, high]),
+                high: d3.max([low, mid, high]),
+                avg: Math.round((low + mid + high) / 3),
+                color: d3.interpolate("#ffffcc", "#800026")(low / 100)
+            };
+        });
+
+        /* draw states on id #statesvg */
+        iStates.draw("#statesvg", sampleData, tooltipHtml);
+
+        d3.select(self.frameElement).style("height", "600");
+    </script>
+    <script>
+        function tooltipHtml(n) {	/* function to create html content string in tooltip div. */
+            return "<h4>" + n + "</h4>";
+        }
+
+        var sampleData = {};	/* Sample random data. */
+
+        ["ADL",
+            "NZMD",
+            "KRN",
+            "MDK",
+            "WRG",
+            "RNG",
+            "MHB",
+            "NLG",
+            "KHM", "HYD"].forEach(function (d) {
+                var low = Math.round(100 * Math.random()),
+                    mid = Math.round(100 * Math.random()),
+                    high = Math.round(100 * Math.random());
+                sampleData[d] = {
+                    low: d3.min([low, mid, high]),
+                    high: d3.max([low, mid, high]),
+                    avg: Math.round((low + mid + high) / 3),
+                    color: d3.interpolate("#ffffcc", "#800026")(low / 100)
+                };
+            });
+
+        /* draw states on id #statesvg */
+        iStates.draw("#statesvg", sampleData, tooltipHtml);
+        // iStates.draw("#statesvg");
+
+        d3.select(self.frameElement).style("height", "600");
+    </script>
+    <h1 id="listss"></h1>
+    <ol id="listt" style="display:none"></ol>
+    <div class="container">
+        <table id="divtable" class="table table-bordered">
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>TDP</th>
+                <th>YSRCP</th>
+                <th>BJP</th>
+                <th>Others</th>
+               
+                <th>winner Votes</th>
+                <th>Margin</th>
+            </tr>
+        </table>
+
+    </div>
+
+    <script type="text/javascript">
+        var table = $("#divtable");
+        var http = "http://103.73.221.75:94/api/";
+        var selected = [];
+        var slist = $("#listt");
+        var v;
+        var objcells;
+        $(document).ready(function () {
+            Bind();
+        });
+        function Bind() {
+            $.ajax({
+                url: http +'ap2014',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $.each(data, function (idx, elem) {
+                        table.append("<tr><td>" + elem.CONSTITUENCY_NUMBER
+                            + "</td><td>" + elem.CONSTITUENCY_NAME + "</td><td>"
+                            + elem.TDP + "</td><td>" + elem.YSRCP + "</td><td>"
+                            + elem.BJP + "</td><td>" + elem.OTHERS + "</td><td>"
+                             + elem.WINNER_VOTE
+                            + "</td><td>" + elem.MARGIN_VOTE + "</td></tr>");
+                        //slist.append("<li>" + elem.SELECTED_CANDIDATE + "</li>")
+                        $("td:nth-child(3)").each(function () {
+                            if ($(this).text() == elem.SELECTED_CANDIDATE) {
+                                $(this).addClass('tdp');
+                                // $("td:nth-child(3)").addClass('add');
+                            }
+                        });
+                        $("td:nth-child(4)").each(function () {
+                            if ($(this).text() == elem.SELECTED_CANDIDATE) {
+                                $(this).addClass('ysr');
+                                // $("td:nth-child(3)").addClass('add');
+                            }
+                        });
+                        $("td:nth-child(5)").each(function () {
+                            if ($(this).text() == elem.SELECTED_CANDIDATE) {
+                                $(this).addClass('bjp');
+                                // $("td:nth-child(3)").addClass('add');
+                            }
+                        });
+                        $("td:nth-child(6)").each(function () {
+                            if ($(this).text() == elem.SELECTED_CANDIDATE) {
+                                $(this).addClass('others');
+                                // $("td:nth-child(3)").addClass('add');
+                            }
+                        });
+
+
+                    });
+                },
+                error: function (err) {
+                    alert(err);
+                }
+            });
+        }
+        
+    </script>
+</body>

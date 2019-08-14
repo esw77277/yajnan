@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EMonk_ProductionModelStoreContainer" CdmEntityContainer="EMonk_ProductionEntities">
+    <FunctionImportMapping FunctionImportName="ASP_RETRIEVE_CONSISTENCYSS_WINNING_LIST" FunctionName="EMonk_ProductionModel.Store.ASP_RETRIEVE_CONSISTENCYSS_WINNING_LIST">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EMonk_ProductionModel.ASP_RETRIEVE_CONSISTENCYSS_WINNING_LIST_Result">
+          <ScalarProperty Name="CONSISTENCY" ColumnName="CONSISTENCY" />
+          <ScalarProperty Name="CONSTITUENCY_NAME" ColumnName="CONSTITUENCY_NAME" />
+          <ScalarProperty Name="TRS" ColumnName="TRS" />
+          <ScalarProperty Name="BJP" ColumnName="BJP" />
+          <ScalarProperty Name="KUTAMI" ColumnName="KUTAMI" />
+          <ScalarProperty Name="OTHERS" ColumnName="OTHERS" />
+          <ScalarProperty Name="SelectedCandidate" ColumnName="SelectedCandidate" />
+          <ScalarProperty Name="Winner_Vote" ColumnName="Winner_Vote" />
+          <ScalarProperty Name="Margin_Vote" ColumnName="Margin_Vote" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

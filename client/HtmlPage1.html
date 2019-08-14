@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    CDN:
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <table id="tablee"></table>
+
+
+
+
+    <script type="text/javascript">
+        var table = $("#tablee");
+        //var http = "../api/electionmonk";
+        var http = "http://localhost:55618/api/electionmonk";
+        var ddl = $(".ddllist");
+        var uol = $("#unolst");
+        $(document).ready(function () {
+            Bind();
+           // Dropdown();
+        });
+        function Bind() {
+            $.ajax({
+                url: http,
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $.each(data, function (idx, elem) {
+                        table.append("<tr><td>" + elem.CONSISTENCY + "</td><td>" + elem.CONSTITUENCY_NAME + "</td></tr>");
+                    });
+                },
+                error: function (err) {
+                    alert(err);
+                }
+            });
+        }
+
+        </script>
+
+</body>
+</html>

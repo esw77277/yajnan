@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMonk_ProductionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EMonk_ProductionEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="ASP_RETRIEVE_CONSISTENCYSS_WINNING_LIST" ReturnType="Collection(EMonk_ProductionModel.ASP_RETRIEVE_CONSISTENCYSS_WINNING_LIST_Result)">
+      <Parameter Name="DISTNAME" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="ASP_RETRIEVE_CONSISTENCYSS_WINNING_LIST_Result">
+    <Property Type="Int32" Name="CONSISTENCY" Nullable="true" />
+    <Property Type="String" Name="CONSTITUENCY_NAME" Nullable="true" />
+    <Property Type="String" Name="TRS" Nullable="true" />
+    <Property Type="String" Name="BJP" Nullable="true" />
+    <Property Type="String" Name="KUTAMI" Nullable="true" />
+    <Property Type="String" Name="OTHERS" Nullable="true" />
+    <Property Type="String" Name="SelectedCandidate" Nullable="true" />
+    <Property Type="Int32" Name="Winner_Vote" Nullable="true" />
+    <Property Type="Int32" Name="Margin_Vote" Nullable="true" />
+  </ComplexType>
+</Schema>

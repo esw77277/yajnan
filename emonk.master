@@ -1,0 +1,211 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="emonk.master.cs" Inherits="emonk" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="keywords" content="ElectionMonk,Election Monk,survey,Exit polls,Elections,Predictions,Telugu,Telangana Elections,AP Election,Elections 2019,AP,TRS,YSRCP,JANASEENA,TDP,others,BJP,INC,LOKSABHA,PARLAMENT" />
+    <meta name="description" content="Become a pollster. Predict your leader. A simple visual tool to forecast your own election results" />
+
+    <title>Election Monk</title>
+    <!-- page title -->
+    <!-- favicon -->
+
+    <link href="img/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="img/favicon.png" rel="icon" type="image/x-icon" />
+    <!-- bootstrap css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- default css / Style Pages -->
+    <link href="style/table-responsive.css" rel="stylesheet" />
+    <%--    <link href="style/style.css" rel="stylesheet" type="text/css">--%>
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link href="style/navigation.css" rel="stylesheet">
+    <link href="style/preloader.css" rel="stylesheet">
+    <link href="style/megamenu-style.css" rel="stylesheet">
+    <link href="style/color-switcher/color-switcher.css" rel="stylesheet">
+    <!-- responsive css -->
+    <link href="style/responsive.css" rel="stylesheet" type="text/css">
+    <!-- animations -->
+    <link href="style/animate.css" rel="stylesheet" type="text/css">
+    <!-- fontawesome -->
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="style/table-responsive.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/dataTables.bootstrap.min.css" />
+    <%-- fa fa icons (favicons) --%>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900|Noto+Sans:400,700|Nunito+Sans:400,400i,600,600i,700,700i,800,900,900i" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130494485-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130494485-1');
+    </script>
+
+   <%-- <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 1118255, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>--%>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130494485-1"></script>
+   <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag() { dataLayer.push(arguments); }
+       gtag('js', new Date());
+
+       gtag('config', 'UA-130494485-1');
+   </script>
+    <style>
+        #data:hover
+        {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&autoLogAppEvents=1&version=v3.2&appId=161770803909';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <form id="form1" runat="server">
+
+
+
+
+
+        <nav class="navbar navbar-default navbar-sticky navbar-mobile bootsnav">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="http://www.electionmonk.com">
+                        <img src="img/emonk 200X200 w.png" class="logo" alt="" ></a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="" data-out="fadeOut">
+                        <li id="liHome"><a href="andhra.aspx">Home</a></li>
+                        <li id="candList"><a href="apcandidateslist.aspx">2019-Candidates</a></li>
+                        <li id="licand"><a href="apwinner.aspx">2014-Winners</a></li>
+                     <li id="lilokk" runat="server" class="dropdown">
+                        <a id="data" class="dropdown-toggle" data-toggle="dropdown">Loksabha 2019</a>
+                        <ul class="dropdown-menu">
+                    <li><a href="ap_parliment.aspx">Andhra Pradesh</a></li>
+                    <li><a href="telangana_parliment.aspx">Telangana</a></li>
+                        </ul>
+                         </li>
+                        <li id="licntctus"><a href="contactus.aspx">Contact Us</a></li>
+                        <li style="padding-top: 39px;">
+                            <asp:Label ID="btnprofile" runat="server" ForeColor="SkyBlue"></asp:Label></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </nav>
+
+        <asp:ContentPlaceHolder ID="cphBody" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 half">
+
+                        <div class="copyright">
+                            Share & Follow   
+                        
+                        <div class="design2">
+                            <a href="https://twitter.com/electionmonk" target="_blank">
+                                <img src="img/twitter.png"></a>
+                            <a href="https://www.facebook.com/electionmonk" target="_blank">
+                                <img src="img/fb.png"></a>
+                        </div>
+
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 half">
+
+                        <div class="copyright pull-right" style="font-weight: normal;">
+                            A Product concept from Techbytes Solutions Inc., USA 
+                        
+                        <div class="design2">
+                            <a href="http://techbytesinc.com" target="_blank">
+                                <img src="img/techbiteslogo.png" alt="logo" />
+                            </a>
+                        </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </form>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="javascript/jquery-3.1.1.min.js"></script>
+    <script src="javascript/jquery.scroll-with-ease.min.js"></script>
+    <script src="javascript/contact.js"></script>
+    <script src="javascript/parallax.js"></script>
+    <script src="javascript/bootsnav.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="javascript/javascript.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="javascript/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".datatab").prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
+                "responsive": true,
+                "sPaginationType": "full_numbers", "pageLength": 5,
+                "order": [[1, "desc"]]
+
+            });
+        });
+
+
+    </script>
+    <asp:ContentPlaceHolder ID="cphFooter" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
+

@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mail Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <meta property="fb:app_id" content="1553498291449422" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://ap.electionmonk.com" />
+    <meta property="og:title" content="Election Monk - View, Forecast and Share" />
+    <meta property="og:description" content="Become a pollster. Predict your leader. A simple visual tool to forecast your own election results" />
+    <meta property="og:image" content="http://ap.electionmonk.com/img/logo/emonk.jpg" />
+   
+    <!-- favicon-->
+    <link href="../img/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="../img/favicon.png" rel="icon" type="image/x-icon" />
+    <style>
+        .btnz {
+            display: block;
+            float: left;
+            padding: 8px 18px;
+            border: none;
+            background-color: #ececec;
+            text-decoration: none;
+            font-size: 17px;
+            color: #FFF;
+        }
+
+            .btnz:hover {
+                color: #efefef;
+            }
+
+        .facebook {
+            background-color: #3b5998;
+            border-radius: 6px;
+        }
+
+        .gplus {
+            background-color: #dd4b39;
+            border-radius: 6px;
+        }
+
+        .twitter {
+            background-color: #55acee;
+        }
+
+        .stumbleupon {
+            background-color: #eb4924;
+            border-radius: 6px;
+        }
+
+        .pinterest {
+            background-color: #70E777;
+            border-radius: 6px;
+        }
+
+        #btnpopup {
+            padding: 6px 10px !important;
+        }
+    </style>
+    <style type="text/css">
+
+
+        @media screen and (max-width: 600px) {
+            table[class="container"] {
+                width: 95% !important;
+            }
+        }
+
+        #outlook a {
+            padding: 0;
+        }
+
+        body {
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+                line-height: 100%;
+            }
+
+        #backgroundTable {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            line-height: 100% !important;
+        }
+
+        img {
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        a img {
+            border: none;
+        }
+
+        .image_fix {
+            display: block;
+        }
+
+        p {
+            margin: 1em 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: black !important;
+        }
+
+            h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+                color: blue !important;
+            }
+
+                h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
+                    color: red !important;
+                }
+
+                h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+                    color: purple !important;
+                }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        a {
+            color: #000;
+        }
+
+        @media only screen and (max-device-width: 480px) {
+
+            a[href^="tel"], a[href^="sms"] {
+                text-decoration: none;
+                color: black; /* or whatever your want */
+                pointer-events: none;
+                cursor: default;
+            }
+
+            .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+                text-decoration: default;
+                color: orange !important; /* or whatever your want */
+                pointer-events: auto;
+                cursor: default;
+            }
+        }
+
+
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            a[href^="tel"], a[href^="sms"] {
+                text-decoration: none;
+                color: blue; /* or whatever your want */
+                pointer-events: none;
+                cursor: default;
+            }
+
+            .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+                text-decoration: default;
+                color: orange !important;
+                pointer-events: auto;
+                cursor: default;
+            }
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+            /* Put your iPhone 4g styles in here */
+        }
+
+        @media only screen and (-webkit-device-pixel-ratio:.75) {
+            /* Put CSS for low density (ldpi) Android layouts in here */
+        }
+
+        @media only screen and (-webkit-device-pixel-ratio:1) {
+            /* Put CSS for medium density (mdpi) Android layouts in here */
+        }
+
+        @media only screen and (-webkit-device-pixel-ratio:1.5) {
+            /* Put CSS for high density (hdpi) Android layouts in here */
+        }
+        /* end Android targeting */
+        h2 {
+            color: #181818;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 22px;
+            line-height: 22px;
+            font-weight: normal;
+        }
+
+        a.link1 {
+        }
+
+        a.link2 {
+            color: #fff;
+            text-decoration: none;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        p {
+            color: #555;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 160%;
+        }
+    </style>
+    <script type="colorScheme" class="swatch active">
+        {
+        "name":"Default",
+        "bgBody":"ffffff",
+        "link":"fff",
+        "color":"555555",
+        "bgItem":"ffffff",
+        "title":"181818"
+        }
+    </script>
+</head>
+<body>
+    <!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
+    <table cellpadding="0" width="100%" cellspacing="0" border="0" id="backgroundTable" class='bgBody'>
+        <tr>
+            <td>
+                <table cellpadding="0" width="620" class="container" align="center" cellspacing="0" border="0">
+                    <tr>
+                        <td>
+                            <!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
+
+                            <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
+                                <tr>
+                                    <td class='movableContentContainer bgItem'>
+                                        <div class='movableContent'>
+                                            <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
+                                                <tr height="40">
+                                                    <td width="200">&nbsp;</td>
+                                                    <td width="200">&nbsp;</td>
+                                                    <td width="200">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="200" valign="top">&nbsp;</td>
+                                                    <td width="200" valign="top" align="center">
+                                                        <div class="contentEditableContainer contentImageEditable">
+                                                            <div class="contentEditable" align='center'>
+                                                                <img src="../img/emonk 200X200 w.png" width="300" height="100" alt='Logo' data-default="placeholder" />
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td width="200" valign="top">&nbsp;</td>
+                                                </tr>
+                                                <tr height="25">
+                                                    <td width="200">&nbsp;</td>
+                                                    <td width="200">&nbsp;</td>
+                                                    <td width="200">&nbsp;</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class='movableContent'>
+                                            <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
+                                                <!--<tr>
+                                                    <td width="100%" colspan="3" align="center" style="padding-bottom:10px;padding-top:25px;">
+                                                        <div class="contentEditableContainer contentTextEditable">
+                                                            <div class="contentEditable" align='center'>
+                                                                <h2>View + Forecast + Share</h2>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>-->
+                                                <tr>
+                                                    <td width="100">&nbsp;</td>
+                                                    <td width="400" align="center">
+                                                        <div class="contentEditableContainer contentTextEditable">
+                                                            <div class="contentEditable" align='center'>
+                                                                <p>
+                                                                  &nbsp;Hurray! Thanks for using Election Monk.
+                                                                </p>
+                                                                <p>Your Prediction Saved Successfully.</p>
+                                                                <b>Click on the link below to check your prediction.</b>
+
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td width="100">&nbsp;</td>
+                                                </tr>
+                                            </table>
+                                            <div style="padding-top:20px">
+                                                <!--<a class="btnz share facebook" style="cursor: pointer; background-color:#337ab7" id="btncurl"><i class="fa fa-clipboard"></i><span style="padding-left:6px;">Copy Url</span></a>-->
+                                                <div style="margin-left:150px">
+                                                    <a class="btnz share pinterest" href="[waurl]" target="_blank"><i class="fa fa-whatsapp"></i><span style="padding-left:6px;">Share</span></a>
+                                                </div>
+                                                <div style="margin-left:200px">
+                                                    <a class="btnz share facebook" href="[fburl]" target="_blank"><i class="fa fa-facebook"></i><span style="padding-left:6px;">Share</span></a>
+                                                </div>
+                                            </div>
+                                            <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
+                                                <tr>
+                                                    <td width="200">&nbsp;</td>
+                                                    <td width="200" align="center" style="padding-top:25px;">
+                                                        <table cellpadding="0" cellspacing="0" border="0" align="center" width="200" height="50">
+                                                            <tr>
+                                                                <td bgcolor="#ED006F" align="center" style="border-radius:4px;" width="200" height="50">
+                                                                    <div class="contentEditableContainer contentTextEditable">
+                                                                        <div class="contentEditable" align='center'>
+                                                                            <a target='_blank' href="[url]" class='link2'>Your Prediction</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td width="200">&nbsp;</td>
+                                                    
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                        <div class="movableContent">
+                                            <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
+                                                <tr>
+                                                    <td width="100%" colspan="2" style="padding-top:20px;">
+                                                        <hr style="height:1px;border:none;color:#333;background-color:#ddd;" />
+                                                    </td>
+                                                    <div style="padding-top:20px">
+                                                        <center>
+                                                            <div class="contentEditableContainer contentFacebookEditable" style="display:inline">
+                                                                <div class="contentEditable">
+                                                                    <a href="https://www.facebook.com/electionmonk" target="_blank"><img src="http://ap.electionmonk.com/img/fb.png" data-default="placeholder" data-max-width='30' data-customIcon="true" width='30' height='30' alt='facebook' style='margin-right:40x;' /></a>
+                                                                    <a href="https://twitter.com/electionmonk" target="_blank">
+                                                                        <img src="http://ap.electionmonk.com/img/twitter.png" data-default="placeholder" data-max-width='30' data-customIcon="true" width='30' height='30' alt='twitter' style='margin-right:40x;' />
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </center>
+                                                    </div>
+                                                </tr>
+                                                <tr>
+                                                    <td width="60" height="30" valign="middle" style="padding-bottom:20px;">
+                                                        <div class="contentEditableContainer contentTextEditable">
+                                                            <div class="contentEditable" align='left'>
+                                                                <span style="font-size:13px;color:#181818;font-family:Helvetica, Arial, sans-serif;line-height:200%;">A Product concept from Techbytes Solutions Inc.</span>
+                                                                <br />
+                                                                <span style="font-size:11px;color:#555;font-family:Helvetica, Arial, sans-serif;line-height:200%;">Farmington Hills, MI-48334, USA | +1-781 791 3252</span>
+                                                                <br />
+                                                                <!--<span style="font-size:13px;color:#181818;font-family:Helvetica, Arial, sans-serif;line-height:200%;">
+                                                                    <a target='_blank' href="#" style="text-decoration:none;color:#555">Forward to a friend</a>
+                                                                </span>
+                                                                <br />
+                                                                <span style="font-size:13px;color:#181818;font-family:Helvetica, Arial, sans-serif;line-height:200%;">
+                                                                    <a target='_blank' href="#" style="text-decoration:none;color:#555">click here to unsubscribe</a>
+                                                                </span>-->
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </td>
+
+                                                    
+                                                </tr>
+                                            </table>
+
+                                            <p style="font-size:8px">Disclaimer: This e-mail is confidential and may also be legally privileged. If you are not the intended recipient, please notify us immediately; you should not copy, forward, disclose or use it for any purpose either partly or completely. If you have received this message in error, please delete it and all copies from your system and notify us by e-mail: <a href="mailto:info@techbytesinc.com">info@techbytesinc.com</a>  Internet communications cannot be guaranteed to be timely, secure, error or virus-free. Also, the Web/ IT/ Email administrator might not allow emails with attachment. Thus the sender does not accept liability for any errors or omissions.</p>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

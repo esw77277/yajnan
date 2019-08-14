@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AP_CONSTITUENCIES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STATE_NAME" Type="nvarchar(max)" />
+    <Property Name="DISTRICT_NAME" Type="nvarchar(max)" />
+    <Property Name="CONSTITUENCY_NUMBER" Type="int" />
+    <Property Name="CONSTITUENCY_NAME" Type="nvarchar(max)" />
+    <Property Name="TDP" Type="nvarchar(max)" />
+    <Property Name="YSRCP" Type="nvarchar(max)" />
+    <Property Name="BJP" Type="nvarchar(max)" />
+    <Property Name="OTHERS" Type="nvarchar(max)" />
+    <Property Name="WINNER_VOTE" Type="int" />
+    <Property Name="MARGIN_VOTE" Type="int" />
+    <Property Name="SELECTED_CANDIDATE" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="AP_CONSTITUENCIES" EntityType="Self.AP_CONSTITUENCIES" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
